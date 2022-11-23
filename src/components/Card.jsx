@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classes from './Card.module.css';
 
-const Card = () => {
+const Card = (props) => {
     return (
         <div className={classes.card}>
-            <img src="https://source.unsplash.com/500x400/?animals" alt="pokemon" />
+            <h2>{props.name}</h2>
+            <img src={props.image} alt="pokemon" />
+            <Link to={`${props.name}`}>See more</Link>
         </div>
     );
 };
