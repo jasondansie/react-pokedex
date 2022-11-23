@@ -1,6 +1,7 @@
 import './App.css';
+import React, { Component } from 'react';
 
-function App() {
+Class App extends Component {
   return (
     <div className="App">
       <h1>Pokedex api</h1>
