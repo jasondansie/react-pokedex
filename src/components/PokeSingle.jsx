@@ -11,8 +11,7 @@ class PokeSingle extends Component {
 
         fetch(`https://pokeapi.co/api/v2/pokemon/${this.props.params.PokeSingle}`)
             .then((res) => res.json())
-            .then((data) => {
-            })
+            .then((data) => this.setState({ data: data, isLoading: false }))
     }
 
     render() {
