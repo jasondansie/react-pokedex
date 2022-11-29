@@ -7,9 +7,10 @@ class PokeSingle extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props.params);
         this.setState({ isLoading: true });
 
-        fetch(`https://pokeapi.co/api/v2/pokemon/${this.props.params.PokeSingle}`)
+        fetch(`https://pokeapi.co/api/v2/pokemon/${this.props.params.pokesingle}`)
             .then((res) => res.json())
             .then((data) => this.setState({ data: data, isLoading: false }))
     }
@@ -20,10 +21,11 @@ class PokeSingle extends Component {
             return <p>Loading... </p>
         }
 
-        console.log(this.props.params.PokeSingle);
+        console.log(this.state.data);
         return (
             <div>
-                <h1>Single Pokeman here</h1>
+                <h2>{this.state.data.name}</h2>
+                <img src={this.state.data.sprites?.other.dream_world.front_default} alt="pokemon" />
             </div>
         );
     }
